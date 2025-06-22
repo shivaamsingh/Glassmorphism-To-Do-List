@@ -10,4 +10,4 @@ A beautiful task manager with glass UI effects.
 - Local storage
 
 ## How to Run
-Open `https://shivaamsingh.github.io/Glassmorphism-To-Do-List/` in any browser.
+Open `https://shivaamsingh.github.io/Glassmorphism-To-Do-List` in any browser.
