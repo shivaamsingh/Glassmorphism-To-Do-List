@@ -6,6 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const todosContainer = document.querySelector('.todos-container');
     const progressBar = document.getElementById('progress');
     const progressNumbers = document.getElementById('numbers');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    // Dark Mode Toggle
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        updateButtonIcon();
+    });
+
+    function updateButtonIcon() {
+        darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+    updateButtonIcon();
 
     const toggleEmptyState = () => {
         emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none';
